@@ -7,19 +7,26 @@ on:
         required : true
 
 jobs:
- jobun:
-   name: jobun
+ get-sources:
    runs-on: Ubuntu-latest 
    steps:
+     - name: checkpout
+       uses: actions/checkout@v4.1.1
      - name: testDev
        run: echo 'c est dev'
        if: ${{github.event.inouts.mep == 'dev'}}
      - name: testqual
-       run: echo 'c est qual'
+       run: |
+         echo 'c est qual'
+         exit 1
        if: ${{github.event.inouts.mep == 'qual'}}
      - name: testprod
        run: echo 'c est  prod'
        if: ${{github.event.inouts.mep == 'prod'}}
+     - name: fin workflox
+       run: echo 'fin work' 
+
+
 
 #if: ${{github.ref == 'refs/head/master}}
     
