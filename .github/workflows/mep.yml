@@ -25,6 +25,7 @@ jobs:
        if: ${{github.event.inouts.mep == 'prod'}}
      - name: fin workflox
        run: echo 'fin work' 
+       if: always()
 
 
 
