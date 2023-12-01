@@ -13,13 +13,13 @@ jobs:
    steps:
      - name: testDev
        run: echo 'c est dev'
-       if: github.event.inouts.mep == 'dev'
+       if: ${{github.event.inouts.mep == 'dev'}}
      - name: testqual
        run: echo 'c est qual'
-       if: github.event.inouts.mep == 'qual'
+       if: ${{github.event.inouts.mep == 'qual'}}
      - name: testprod
        run: echo 'c est  prod'
-       if: github.event.inouts.mep == 'prod'
+       if: ${{github.event.inouts.mep == 'prod'}}
 
 #if: ${{github.ref == 'refs/head/master}}
     
